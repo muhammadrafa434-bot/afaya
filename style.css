@@ -13,6 +13,32 @@
     box-sizing: border-box;
 }
 
+/* Music Player */
+.music-player {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#music-btn {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#music-btn:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background: var(--bg-gradient);
@@ -152,15 +178,27 @@ section {
 /* Special Photo Section */
 .special-photo {
     padding: 4rem 2rem;
+    width: 100%;
 }
 
 .special-content {
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.special-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
 }
 
 .special-card {
-    margin: 2rem auto;
-    max-width: 500px;
+    flex: 1;
+    max-width: 450px;
+    min-width: 300px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -175,6 +213,29 @@ section {
 .special-card img {
     width: 100%;
     display: block;
+}
+
+/* Lyrics Section */
+.lyrics {
+    padding: 4rem 2rem;
+}
+
+.lyrics-box {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass);
+    padding: 3rem;
+    border-radius: 30px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lyrics-content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-style: italic;
 }
 
 .signature {

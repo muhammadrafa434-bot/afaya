@@ -20,20 +20,37 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
     heart.innerHTML = '❤️';
-    
+
     const startPositionX = Math.random() * window.innerWidth;
     const duration = Math.random() * 3 + 3; // 3-6s
     const size = Math.random() * 1 + 0.5; // 0.5-1.5rem
-    
+
     heart.style.left = startPositionX + 'px';
     heart.style.animationDuration = duration + 's';
     heart.style.fontSize = size + 'rem';
-    
+
     container.appendChild(heart);
-    
+
     setTimeout(() => {
         heart.remove();
     }, duration * 1000);
 }
 
 setInterval(createHeart, 300);
+
+// Music Control
+const musicBtn = document.getElementById('music-btn');
+const bgMusic = document.getElementById('bg-music');
+let isPlaying = false;
+
+musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        musicBtn.innerHTML = '🎵 Play Music';
+    } else {
+        bgMusic.play();
+        musicBtn.innerHTML = '⏸️ Pause';
+    }
+    isPlaying = !isPlaying;
+});
+
